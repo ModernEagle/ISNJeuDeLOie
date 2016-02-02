@@ -1,0 +1,23 @@
+#-*- coding: utf-8 -*-
+import random
+def lancedede():
+	typD = 6
+	nbD = 1
+	resultat = (random.randrange(1,(typD+1)))
+	return (resultat)
+	
+def deplacer():
+	print("Le resultat est ", mdr)
+	place = 0
+	place = place + mdr
+	return(place)
+	
+mdr = lancedede()
+
+mdr2 = deplacer()
+
+place = mdr + mdr2
+print(place)
+
+deplacer()
+print("votre place est ", mdr2)
