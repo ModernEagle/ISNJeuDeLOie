@@ -10,12 +10,19 @@ class StringGenerator(object):
        return """<html>
          <head>
            <link href="/static/css/style.css" rel="stylesheet">
-         </head>
-     <body>
-    	 <img src='/static/plateauofficial.jpg' alt="un chat"/> 
-       </form>
-     </body>
-   </html>"""
+   </head>
+		<body>
+			<img SRC="/static/plateauofficial.jpg"
+			alt="plateau du jeu de l'oie" />
+		<img SRC="/static/sprite.jpeg";  style="left:100px; top:100px; position:absolute;" style="width="60"; height="120";
+		alt="image de sprite" />
+		<img SRC="/static/sprite.jpeg"; style="left:800px; top:500px; position:absolute; style="width="100"; height="180";
+		alt="image de sprite" />
+		<img SRC="/static/sprite.jpeg"; style="left:250px; top:300px; position:absolute;" style="width="50"; height="80"; 
+		alt="image de sprite" />
+		</body>
+	</html>
+<input type="button" class="bouton_actif" id="b1" value="lancer le de">"""
 
    @cherrypy.expose
    def generate(self, length=8):
