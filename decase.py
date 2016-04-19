@@ -15,6 +15,8 @@ def deplusieur() :
 	lol2 = 0
 	place1 = 0
 	place2 = 0
+	patient1 = 0
+	patient2 = 0
 	while victoire != 1:
 		try: raw_input = input
 		except NameError: pass
@@ -36,7 +38,7 @@ def deplusieur() :
 			lol1 = place1 - trop
 			print("Votre nouvelle place est :", lol1)
 		if place1 == 65 :
-			print("JOUEUR 1 GAGNE")
+			print(" Le joueur 1 a réussi avant le joueur 2 à finir le parcours en évitant les dangers, bravo")
 			victoire = 1
 		print(raw_input("\nAppuyez pour passer au joueur 2"))
 		os.system("clear")		
@@ -58,7 +60,7 @@ def deplusieur() :
 			print("Votre nouvelle place est : ", lol2)
 			
 		if place2 == 65 :
-			print("JOUEUR 2 GAGNE")
+			print("Le joueur 2 a réussi avant le joueur 1 à finir le parcours en évitant les dangers, bravo")
 			victoire = 1
 		
 		if place1 == 7 :
@@ -98,7 +100,7 @@ def deplusieur() :
 				print("Tu es agile, tu avances de", action, "cases") 
 				print("Votre nouvelle place est", lol1)
 		if place2 == 24 :
-		print("Tu es près d'une crevasse, fait le tour pour ne pas risquer ta vie.")
+			print("Tu es près d'une crevasse, fait le tour pour ne pas risquer ta vie.")
 			action = lancedede()
 			if action == 1 :
 				lol2 = place2 + 1
@@ -106,10 +108,11 @@ def deplusieur() :
 				lol2 = place2 + 2
 			if action == 3 :
 				lol2 = place2 +3
-				
 				print("Tu es agile, tu avances de", action, "cases")
-				print("Votre nouvelle place est", lol2) 
-		if place1 == 32 :
+			else:
+				print("Vous n'avez pas fait 1,2 ou 3, restez sur cette case")	
+				print("Votre place est", lol2) 
+		if place1 == 32 : 
 			action = lancedede()
 			if action == 1 :
 				lol1 = place1 + 1
@@ -117,6 +120,10 @@ def deplusieur() :
 				lol1 = place1 + 3
 			if action == 5 :
 				lol1 = place1 +5
+			else:
+				 place1 = 32
+			print("Vous avez relancé le dé et fait un", action)
+			print("Votre nouvelle place est donc", place1)
 		if place2 == 32 :
 			action = lancedede()
 			if action == 1 :
@@ -124,51 +131,27 @@ def deplusieur() :
 			if action == 3 :
 				lol2 = place2 + 3
 			if action == 5 :
-				lol2 = place2 +5
-				
-		if place1 == 41 :
-			patient = 0
-			while patient != 1 :
-				os.system("clear")
+				lol2 = place2 + 5
+			else:
+				 place2 = 32
+			print("Vous avez relancé le dé et fait un", action)
+			print("Votre nouvelle place est donc", place2)
+#		if place1 == 41 :
+#			patient1 = 1
+#			while patient == 1 :
+#				print(raw_input("passez votre tour"))
+#				os.system("clear")
 	
-#				while victoire != 1:
-#					try: raw_input = input
-#					except NameError: pass
-#					print(raw_input("Appuyez pour passer au joueur 1"))
-#					os.system("clear")	
-#					print(raw_input("Joueur 1 : Vous passez votre tour\n"))
-#		
-#					print(raw_input("\nAppuyez pour passer au joueur 2"))
-#					os.system("clear")		
-#					print(raw_input("Joueur 2 : Appuyez sur une touche pour lancer le dé"))
-#
-#					resultat = lancedede()
-#					if place2 != 0 :
-#						print("Votre place actuelle est ",lol2)
-#					print("Le résultat du lancé de dé est ", resultat)
-#					place2 = lol2 + resultat
-#					lol2 = place2
-#					print("Votre place est ",lol2, "\n")
-#					if place2 > 65 :
-#						trop = lol2 - 65
-#						print ("Votre dépassement est de :", trop)
-#						print("Votre place est supérieure à 65 !")
-#						trop = trop + 1 
-#						lol2 = place2 - trop
-#						print("Votre nouvelle place est : ", lol2)
-#					if place2 == 41 :
-#						patient = 1
-#						victoire = 1
-#						print("Le joueur 2 Libère le 1")
-#					if place2 == 65 :
-#						print("JOUEUR 2 GAGNE")
-#						victoire = 1
-#
+
+
 #		if place2 == 41 :
-#			
-#			
+#			patient2 = 1
+#			while patient == 1 :
+#				print(raw_input("Passez votre tour"))
+#				os.system("clear")
+				
 #		if place1 == 48 :
-#			
+#			patiente que qqn passe, grotte
 #			
 #		if place2 == 48 :
 #
@@ -181,14 +164,13 @@ def deplusieur() :
 			lol2 = place2 + 5
 			print ("Vous avez eu de la chance en vous perdant et avez observé de la lumière à travers les arbres de la fôret, avancez de 5 cases")
 			print ("Votre nouvelle place est", lol2)
-#		if place1 == 59 :
-#			
-#		if place2 == 59 :
-#			
-#		if place1 == 63 :
-#			lol1 = place1 - 63
-#			print("Vous êtes tombé dans la crevasse, on vous a rappatrié à la case départ")
-#		if place2 == 63 :
-#			lol2 = place2 - 63
-#			print("Vous êtes tombé dans la crevasse, on vous a rappatrié à la case départ")
+
+		if place1 == 63 :
+			lol1 = place1 - 62
+			print("Vous êtes tombé dans la crevasse, on vous a rappatrié à la case départ")
+			print("Vous retournez donc à la case", lol1)
+		if place2 == 63 :
+			lol2 = place2 - 62
+			print("Vous êtes tombé dans la crevasse, on vous a rappatrié à la case départ")
+			print("Vous retournez donc à la case", lol2)
 deplusieur() 
